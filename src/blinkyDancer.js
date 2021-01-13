@@ -17,3 +17,16 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 
   return blinkyDancer;
 };
+
+// const makeBlinkyDancer = function(op, left, timeBetweenSteps) {
+//   this.oldStep = this.step;
+// };
+
+// makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+// BlinkyDancer.prototype.constructor = BlinkyDancer;
+
+// makeBlinkyDancer.prototype.step = function() {
+//   this.oldStep;
+
+//   this.$node.toggle;
+// }
