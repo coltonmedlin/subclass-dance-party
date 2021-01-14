@@ -31,20 +31,22 @@
 //   return dancer;
 // };
 
-var makeDancer = function(top, left, timeBetweenSteps) {
+var makeDancer = function (top, left, timeBetweenSteps) {
+  this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
+  this.step();
+  this.setPosition(top, left);
 };
 
-makeDancer.prototype.step = function() {
-  setTimeout(dancer.step, timeBetweenSteps);
+makeDancer.prototype.step = function () {
+  var _context = this;
+  setTimeout(function () { _context.step(); }, this.timeBetweenSteps);
 };
-makeDancer.step();
 
-makeDancer.setPosition = function(top, left) {
+makeDancer.prototype.setPosition = function (top, left) {
   var styleSettings = {
     top: top,
     left: left
   };
-  dancer.$node.css(styleSettings);
+  this.$node.css(styleSettings);
 };
-makeDancer.setPosition(top, left);
