@@ -3,7 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('img/bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
