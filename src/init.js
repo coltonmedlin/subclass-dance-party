@@ -75,5 +75,17 @@ $(document).ready(function() {
       pair2.setPosition(top, middle - 50 + 'px');
     }
   });
+
+
+  $(document).on('mouseover', '.dancer', function(event) {
+    const colors = ['red', 'orange', 'pink', 'yellow', 'purple', 'magenta'];
+    let i = Math.floor(Math.random() * colors.length);
+    let color = colors[i];
+    let style = '10px solid ' + color;
+    var styleSettings = {
+      border: style
+    };
+    $('.dancer').css(styleSettings);
+  });
 });
 
