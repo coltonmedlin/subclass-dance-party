@@ -14,7 +14,9 @@ describe('squareDancer', function () {
 
   it('should be square', function () {
     // expect((squareDancer.$node).getCssProperty('border-radius').value).to.be.equal('0px');
-    expect(squareDancer.$node.css('border-radius')).to.eq('0px');
+    var radius = squareDancer.$node.css('border-radius');
+    //expect(squareDancer.$node.css('span')).to.eq('squareDancer');
+    expect(radius).to.eq('0px');
   });
 
   describe('dance', function () {

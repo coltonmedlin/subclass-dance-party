@@ -27,6 +27,7 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
 
@@ -36,6 +37,7 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
 
@@ -45,7 +47,17 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  $('#lineUpButton').on('click', function(event) {
+    let dancers = window.dancers;
+    let distance = $('body').height() / dancers.length;
+    for (let i = 0; i < dancers.length; i++) {
+      let x = i * distance;
+      dancers[i].setPosition(x, 5);
+    }
   });
 });
 
