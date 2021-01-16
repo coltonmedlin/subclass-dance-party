@@ -59,5 +59,21 @@ $(document).ready(function() {
       dancers[i].setPosition(x, 5);
     }
   });
+
+  $('#pairUpButton').on('click', function(event) {
+    const dancers = window.dancers;
+    const middle = $('body').width() / 2;
+    //debugger;
+    for (let i = 0; i < dancers.length; i + 2) {
+      let pair1 = dancers[i];
+      let pair2 = dancers[i + 1];
+      if (pair2 === undefined) {
+        return;
+      }
+      let top = dancers[i].$node.css('top');
+      pair1.setPosition(top, middle + 100 + 'px');
+      pair2.setPosition(top, middle - 100 + 'px');
+    }
+  });
 });
 
