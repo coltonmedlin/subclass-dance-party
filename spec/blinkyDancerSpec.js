@@ -9,6 +9,7 @@ describe('blinkyDancer', function () {
   });
 
   it('should have a jQuery $node object', function () {
+    console.log(blinkyDancer);
     expect(blinkyDancer.$node).to.be.an.instanceof(jQuery);
   });
 
@@ -16,6 +17,12 @@ describe('blinkyDancer', function () {
     sinon.spy(blinkyDancer.$node, 'toggle');
     blinkyDancer.step();
     expect(blinkyDancer.$node.toggle.called).to.be.true;
+  });
+
+  it('should have a randomly set position', function () {
+    sinon.spy(blinkyDancer, 'setPosition');
+    blinkyDancer.setPosition(10, 20);
+    expect(blinkyDancer.setPosition.called).to.be.true;
   });
 
   describe('dance', function () {

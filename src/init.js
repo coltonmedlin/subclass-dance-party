@@ -63,7 +63,6 @@ $(document).ready(function() {
   $('#pairUpButton').on('click', function(event) {
     const dancers = window.dancers;
     const middle = $('body').width() / 2;
-    //debugger;
     for (let i = 0; i < dancers.length; i += 2) {
       let pair1 = dancers[i];
       let pair2 = dancers[i + 1];

@@ -13,22 +13,13 @@ describe('squareDancer', function () {
   });
 
   it('should be square', function () {
-    // expect((squareDancer.$node).getCssProperty('border-radius').value).to.be.equal('0px');
-    var radius = squareDancer.$node.css('border-radius');
-    //expect(squareDancer.$node.css('span')).to.eq('squareDancer');
-    expect(radius).to.eq('0px');
+    expect(squareDancer.$node[0].className).to.be.equal('squareDancer');
   });
 
-  describe('dance', function () {
-    it('should call step at least once per second', function () {
-      sinon.spy(squareDancer, 'step');
-      expect(squareDancer.step.callCount).to.be.equal(0);
-      clock.tick(timeBetweenSteps);
-
-      expect(squareDancer.step.callCount).to.be.equal(1);
-
-      clock.tick(timeBetweenSteps);
-      expect(squareDancer.step.callCount).to.be.equal(2);
-    });
+  it('should have a randomly set position', function () {
+    sinon.spy(squareDancer, 'setPosition');
+    squareDancer.setPosition(15, 30);
+    expect(squareDancer.setPosition.called).to.be.true;
   });
+
 });
