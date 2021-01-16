@@ -64,15 +64,15 @@ $(document).ready(function() {
     const dancers = window.dancers;
     const middle = $('body').width() / 2;
     //debugger;
-    for (let i = 0; i < dancers.length; i + 2) {
+    for (let i = 0; i < dancers.length; i += 2) {
       let pair1 = dancers[i];
       let pair2 = dancers[i + 1];
       if (pair2 === undefined) {
         return;
       }
       let top = dancers[i].$node.css('top');
-      pair1.setPosition(top, middle + 100 + 'px');
-      pair2.setPosition(top, middle - 100 + 'px');
+      pair1.setPosition(top, middle + 50 + 'px');
+      pair2.setPosition(top, middle - 50 + 'px');
     }
   });
 });
